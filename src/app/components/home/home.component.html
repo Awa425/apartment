@@ -1,0 +1,224 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bienvenue chez nous</h1>
+    <p>Découvrez votre nouveau appartement.
+      Aider 100 millions de locataires à trouver leur logement idéal.</p>
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
+      <div class="search-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Où cherchez-vous ?</mat-label>
+          <input matInput formControlName="location" placeholder="Ville, quartier, adresse...">
+          <mat-icon matSuffix>location_on</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Type de bien</mat-label>
+          <mat-select formControlName="propertyType">
+            <mat-option *ngFor="let type of propertyTypes" [value]="type.value">
+              {{type.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Budget max</mat-label>
+          <input matInput type="number" formControlName="priceRange" placeholder="fcfa">
+          <mat-icon matSuffix>fcfa</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" type="submit">
+          <mat-icon>search</mat-icon>
+          Rechercher
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="properties">
+  <h2>NOS PROPRIÉTÉS</h2>
+  <div class="decorative-line"></div>
+  <div class="properties-grid">
+    <div class="property-card" *ngFor="let property of properties">
+      <div class="property-image">
+        <img [src]="property.image" [alt]="property.name">
+      </div>
+      <div class="property-content" style="text-align: center;">
+        <h3 class="property-title">{{property.name}}</h3>
+        <p class="property-address">{{property.location}}</p>
+        <p class="property-price">Studio - {{property.bedrooms}} Beds | {{property.price | currency:'FCFA':'symbol':'1.0-0'}} - {{property.price * 1.5 | currency:'FCFA':'symbol':'1.0-0'}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-tours">
+  <div class="section-header">
+    <h2>Our featured TOURS</h2>
+    <div class="decorative-line"></div>
+  </div>
+
+  <div class="tours-grid">
+    <mat-card class="tour-card" *ngFor="let tour of featuredTours">
+      <img mat-card-image [src]="tour.image" [alt]="tour.name">
+      <mat-card-content>
+        <div class="tour-info">
+          <div class="tour-location">
+            <h3>{{tour.rating}}</h3>
+            <span class="country">{{tour.rating}}</span>
+          </div>
+          <div class="tour-price">
+            <span class="price">${{tour.price}}</span>
+            <span class="duration">2</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="view-all">
+    <button mat-raised-button color="accent" class="view-all-btn">
+      VIEW ALL TOURS
+    </button>
+  </div>
+</section>
+
+<div class="services-section">
+  <div class="vip-services">
+    <h2>V.I.P SERVICES</h2>
+    <div class="decorative-line"></div>
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of vipServices">
+        <div class="service-image" [style.background-image]="'url(' + service.image + ')'">
+          <div class="service-title">
+            <h3>{{service.title}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="special-offers">
+    <h2>Special OFFERS</h2>
+    <div class="decorative-line"></div>
+    <div class="offers-grid">
+      <div class="offer-card" *ngFor="let offer of specialOffers">
+        <div class="offer-image" [style.background-image]="'url(' + offer.image + ')'">
+          <div class="offer-content">
+            <h3>{{offer.title}}</h3>
+            <div class="offer-details">
+              <p class="discount">Save {{offer.discount}}</p>
+              <p class="period">{{offer.period}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="testimonials">
+  <h2>Some words FROM CUSTOMERS</h2>
+  <div class="decorative-line"></div>
+
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <div class="user-info">
+        <div class="user-avatar">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+        <div class="user-details">
+          <h3>{{testimonials[currentTestimonialIndex].name}}</h3>
+          <p class="date">{{testimonials[currentTestimonialIndex].date}}</p>
+        </div>
+      </div>
+      <div class="testimonial-content">
+        <p>{{testimonials[currentTestimonialIndex].comment}}</p>
+      </div>
+      <div class="testimonial-navigation">
+        <div class="dots">
+          <span *ngFor="let testimonial of testimonials; let i = index" 
+                [class.active]="i === currentTestimonialIndex"
+                (click)="setCurrentTestimonial(i)">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="contact-info">
+    <div class="contact-item">
+      <mat-icon class="icon">map</mat-icon>
+      <div class="info">
+        <h3>ADDRESS</h3>
+        <p>123 Street Name, City Name</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <mat-icon class="icon">phone</mat-icon>
+      <div class="info">
+        <h3>PHONE</h3>
+        <p>+1 (800) 22 33 444</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <mat-icon class="icon">email</mat-icon>
+      <div class="info">
+        <h3>E-MAIL</h3>
+        <p>contact&#64;apartment-finder.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="logo">
+        <h2>infinity</h2>
+      </div>
+      <div class="reservation">
+        <p>RESERVATION HOTLINE:</p>
+        <p>+1 222-34-56-789</p>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <nav class="footer-nav">
+        <a href="#">About Us</a>
+        <span class="separator">|</span>
+        <a href="#">Contact Us</a>
+        <span class="separator">|</span>
+        <a href="#">Booking Conditions</a>
+        <span class="separator">|</span>
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+
+    <div class="footer-right">
+      <div class="latest-news">
+        <h3>LATEST NEWS</h3>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit 4</a></li>
+          <li><a href="#">Lorem ipsum dolor sit 3</a></li>
+          <li><a href="#">Lorem ipsum dolor sit 2</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="weather">
+      <mat-icon>wb_sunny</mat-icon>
+      <span>Prague | -5°C | Mostly Clear</span>
+    </div>
+    <div class="social-links">
+      <a href="#" class="social-link"><mat-icon>facebook</mat-icon></a>
+      <a href="#" class="social-link"><mat-icon>twitter</mat-icon></a>
+      <a href="#" class="social-link"><mat-icon>public</mat-icon></a>
+      <a href="#" class="social-link"><mat-icon>photo_camera</mat-icon></a>
+    </div>
+  </div>
+</footer>

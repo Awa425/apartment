@@ -1,0 +1,29 @@
+<mat-toolbar class="header">
+  <div class="logo">
+    <a routerLink="/">
+      <span class="logo-text">AD</span>
+    </a>
+  </div>
+
+  <nav class="nav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/hotels" routerLinkActive="active">Hotels</a>
+    <a routerLink="/tours" routerLinkActive="active">Tours</a>
+    <a routerLink="/features" routerLinkActive="active">Features</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </nav>
+
+  <div class="right-actions">
+    <button mat-button [matMenuTriggerFor]="languageMenu" class="language-selector">
+      <img [src]="currentLanguage.flag" [alt]="currentLanguage.name" class="flag-icon">
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #languageMenu="matMenu" class="language-menu">
+      <button mat-menu-item *ngFor="let lang of languages" (click)="changeLanguage(lang)">
+        <img [src]="lang.flag" [alt]="lang.name" class="flag-icon">
+        <span>{{lang.name}}</span>
+      </button>
+    </mat-menu>
+    <a routerLink="/login" class="login-btn" mat-button>Login</a>
+  </div>
+</mat-toolbar>
