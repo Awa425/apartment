@@ -1,28 +1,18 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { ApartmentDetailComponent } from './components/apartment-detail/apartment-detail.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent)
+  { 
+    path: '', 
+    component: HomeComponent 
   },
-  {
-    path: 'apartments',
-    loadComponent: () => import('./components/apartment-list/apartment-list.component').then(m => m.ApartmentListComponent)
+  { 
+    path: 'apartment/:id', 
+    component: ApartmentDetailComponent 
   },
-  {
-    path: 'apartments/:id',
-    loadComponent: () => import('./components/apartment-detail/apartment-detail.component').then(m => m.ApartmentDetailComponent)
-  },
-  {
-    path: 'search',
-    loadComponent: () => import('./components/apartment-list/apartment-list.component').then(m => m.ApartmentListComponent)
-  },
-  {
-    path: 'contact',
-    loadComponent: () => import('./components/contact-form/contact-form.component').then(m => m.ContactFormComponent)
-  },
-  {
-    path: '**',
-    redirectTo: ''
+  { 
+    path: '**', 
+    redirectTo: '' 
   }
 ];

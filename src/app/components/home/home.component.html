@@ -39,7 +39,7 @@
   <h2>NOS PROPRIÉTÉS</h2>
   <div class="decorative-line"></div>
   <div class="properties-grid">
-    <div class="property-card" *ngFor="let property of properties">
+    <div class="property-card" *ngFor="let property of properties" (click)="onPropertyClick(property.id)">
       <div class="property-image">
         <img [src]="property.image" [alt]="property.name">
       </div>
@@ -59,17 +59,16 @@
   </div>
 
   <div class="tours-grid">
-    <mat-card class="tour-card" *ngFor="let tour of featuredTours">
+    <mat-card class="tour-card" *ngFor="let tour of properties">
       <img mat-card-image [src]="tour.image" [alt]="tour.name">
       <mat-card-content>
         <div class="tour-info">
           <div class="tour-location">
-            <h3>{{tour.rating}}</h3>
-            <span class="country">{{tour.rating}}</span>
+            <h3>{{tour.name}}</h3>
+            <span class="country">{{tour.location}}</span>
           </div>
           <div class="tour-price">
             <span class="price">${{tour.price}}</span>
-            <span class="duration">2</span>
           </div>
         </div>
       </mat-card-content>

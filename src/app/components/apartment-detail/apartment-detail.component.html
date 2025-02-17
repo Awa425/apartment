@@ -1,1 +1,85 @@
-<p>apartment-detail works!</p>
+<div class="apartment-detail-container">
+  <!-- En-tête avec image principale -->
+  <div class="header-section">
+    <div class="main-image">
+      <img [src]="apartment?.imageUrl" [alt]="apartment?.title">
+    </div>
+    <div class="title-section">
+      <h1>{{ apartment?.title }}</h1>
+      <p class="location"><i class="fas fa-map-marker-alt"></i> {{ apartment?.location }}</p>
+    </div>
+  </div>
+
+  <!-- Galerie image -->
+  <div class="galeries-grid">
+    <div class="galerie-card" *ngFor="let image of apartment?.images">
+      <div class="galerie-image" [style.background-image]="'url(' + image + ')'">
+        <div class="galerie-title">
+          <h3>{{ apartment?.title }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="galerie-card">
+      <div class="galerie-image" [style.background-image]="'url(' + apartment?.localisation + ')'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section principale avec les détails -->
+  <div class="main-content">
+    <div class="info-section">
+      <!-- Informations principales -->
+      <div class="main-info">
+        <div class="info-item">
+          <i class="fas fa-expand"></i>
+          <span>{{ apartment?.surface }} m²</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-bed"></i>
+          <span>{{ apartment?.bedrooms }} chambres</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-euro-sign"></i>
+          <span>{{ apartment?.price }} €/mois</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="description">
+        <h2>Description</h2>
+        <p>{{ apartment?.description }}</p>
+      </div>
+
+      <!-- Caractéristiques -->
+      <div class="features">
+        <h2>Caractéristiques</h2>
+        <ul>
+          <li *ngFor="let feature of apartment?.features">
+            <i class="fas fa-check"></i> {{ feature }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section de réservation -->
+    <div class="booking-section">
+      <div class="booking-card">
+        <h2>Contacter le propriétaire</h2>
+
+        <button class="send-message-btn" (click)="openSendMessageModal()">
+          Envoyer un message
+        </button>
+
+        <div class="contact-phone">
+          <a href="tel:+221 77 123 45 67">+221 77 123 45 67</a>
+        </div>
+
+        <div class="additional-info">
+          <div class="language-info">
+            <span><i class="fas fa-globe"></i> Language: English</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

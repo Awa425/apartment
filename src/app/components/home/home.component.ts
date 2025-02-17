@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 interface Property {
   id: number;
@@ -76,6 +77,33 @@ export class HomeComponent {
       price: 1200
     },
     {
+      id: 4,
+      name: 'Presidential Towers',
+      location: '555 W Madison St, Chicago, IL 60661',
+      image: 'assets/images/properties/img3.jpg',
+      bedrooms: 2,
+      price: 1480
+    },
+    {
+      id: 5,
+      name: 'Luxury Apartments',
+      location: '123 Lake Shore Drive, Chicago, IL 60601',
+      image: 'assets/images/properties/img2.jpg',
+      bedrooms: 3,
+      price: 2200
+    },
+    {
+      id: 6,
+      name: 'Urban Living',
+      location: '789 State Street, Chicago, IL 60605',
+      image: 'assets/images/properties/img1.jpg',
+      bedrooms: 1,
+      price: 1200
+    }
+  ];
+
+  chambres: any[] = [
+    {
       id: 1,
       name: 'Presidential Towers',
       location: '555 W Madison St, Chicago, IL 60661',
@@ -98,75 +126,30 @@ export class HomeComponent {
       image: 'assets/images/properties/img1.jpg',
       bedrooms: 1,
       price: 1200
-    }
-  ];
-
-  featuredTours: Property[] = [
-    {
-      id: 1,
-      name: 'LAVENDER',
-      location: 'Rome',
-      rating: 4.5,
-      image: 'assets/images/properties/5.jpg',
-      price: 156.0,
-      bedrooms: 2,
-      bathrooms: 1,
-      area: 85
-    },
-    {
-      id: 2,
-      name: 'MANGO',
-      location: 'Florida',
-      rating: 4.4,
-      image: 'assets/images/properties/1.jpg',
-      price: 122.2,
-      bedrooms: 2,
-      bathrooms: 2,
-      area: 80
-    },
-    {
-      id: 3,
-      name: 'LOTUS',
-      location: 'Singapore',
-      rating: 4.3,
-      image: 'assets/images/properties/2.jpg',
-      price: 133.5,
-      bedrooms: 2,
-      bathrooms: 2,
-      area: 95
     },
     {
       id: 4,
-      name: 'LYCHEE',
-      location: 'Singapore',
-      rating: 4.5,
-      image: 'assets/images/properties/3.jpg',
-      price: 175.2,
+      name: 'Presidential Towers',
+      location: '555 W Madison St, Chicago, IL 60661',
+      image: 'assets/images/properties/img3.jpg',
       bedrooms: 2,
-      bathrooms: 2,
-      area: 110
+      price: 1480
     },
     {
       id: 5,
-      name: 'LAVENDER',
-      location: 'Rome',
-      rating: 4.5,
-      image: 'assets/images/properties/1.jpg',
-      price: 156.0,
-      bedrooms: 2,
-      bathrooms: 1,
-      area: 85
+      name: 'Luxury Apartments',
+      location: '123 Lake Shore Drive, Chicago, IL 60601',
+      image: 'assets/images/properties/img2.jpg',
+      bedrooms: 3,
+      price: 2200
     },
     {
       id: 6,
-      name: 'MANGO',
-      location: 'Florida',
-      rating: 4.4,
-      image: 'assets/images/properties/2.jpg',
-      price: 122.2,
-      bedrooms: 2,
-      bathrooms: 2,
-      area: 80
+      name: 'Urban Living',
+      location: '789 State Street, Chicago, IL 60605',
+      image: 'assets/images/properties/img1.jpg',
+      bedrooms: 1,
+      price: 1200
     }
   ];
 
@@ -236,7 +219,7 @@ export class HomeComponent {
     this.currentTestimonialIndex = index;
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.searchForm = this.fb.group({
       location: [''],
       propertyType: ['all'],
@@ -251,5 +234,9 @@ export class HomeComponent {
 
   getRatingArray(rating: number): number[] {
     return Array(Math.floor(rating)).fill(0);
+  }
+
+  onPropertyClick(id: number) {
+    this.router.navigate(['/apartment', id]);
   }
 }

@@ -1,35 +1,35 @@
 export interface Apartment {
-  id: string;
-  title: string;
+  id: number;
+  name: string;
   description: string;
+  location: string;
+  image: string;
+  images: string[];
+  bedrooms: number;
+  bathrooms: number;
   price: number;
-  address: {
-    street: string;
-    city: string;
-    state: string;
-    zipCode: string;
-    coordinates: {
-      latitude: number;
-      longitude: number;
-    };
-  };
-  features: {
-    bedrooms: number;
-    bathrooms: number;
-    area: number; // in square feet/meters
-    furnished: boolean;
-    parking: boolean;
-    petsAllowed: boolean;
-  };
-  images: string[]; // URLs of images
+  area: number;
+  features: string[];
   amenities: string[];
-  availableFrom: Date;
-  landlord: {
-    id: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
+  agent: {
     name: string;
     phone: string;
     email: string;
+    photo: string;
   };
-  createdAt: Date;
-  updatedAt: Date;
+  availability: string;
+  yearBuilt: number;
+  parkingSpots: number;
+  petsAllowed: boolean;
+  furnished: boolean;
+  utilities: string[];
+  nearbyPlaces: {
+    name: string;
+    type: string;
+    distance: string;
+  }[];
 }
