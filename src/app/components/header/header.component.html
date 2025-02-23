@@ -24,6 +24,28 @@
         <span>{{lang.name}}</span>
       </button>
     </mat-menu>
-    <a routerLink="/login" class="login-btn" mat-button>Login</a>
+    <button mat-button [matMenuTriggerFor]="menu" class="login-btn">
+      <a   >Login</a>
+    </button>
+    <mat-menu #menu="matMenu">
+     
+      <button mat-menu-item>
+        <mat-icon>login</mat-icon>
+        <span>Se connecte</span>
+      </button>
+
+      <button mat-menu-item > 
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span routerLink="/user-profile">Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
   </div>
 </mat-toolbar>

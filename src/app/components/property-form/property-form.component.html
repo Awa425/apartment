@@ -1,0 +1,25 @@
+<form>
+    <ng-container *ngFor="let field of propertyFields">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ field.label }}</mat-label>
+        <input matInput [type]="field.type" >
+        <span matTextSuffix *ngIf="field.suffix">{{ field.suffix }}</span>
+      </mat-form-field>
+    </ng-container>
+  
+    <section class="example-section">
+      <label class="example-margin">Meublé ou non meublé:</label>
+      <mat-radio-group>
+        <mat-radio-button class="example-margin" value="yes">Oui</mat-radio-button>
+        <mat-radio-button class="example-margin" value="no">Non</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  
+    <div class="file-upload">
+      <label for="fileInput">Ajouter 3 images</label>
+      <input id="fileInput" type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
+    </div>
+  
+    <button mat-raised-button color="accent">Publier</button>
+  </form>
+  

@@ -1,0 +1,128 @@
+.my-profile{
+    display: flex;
+    width: 100%;
+    // Profile
+    .example-card{
+      flex: 30%;
+      .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+        .profile-card {
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          width: 100%;
+          max-width: 400px;
+          text-align: center;
+        
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        
+          h3 {
+            margin: 10px 0;
+            font-size: 1.8em;
+            color: #333;
+          }
+        
+          mat-form-field {
+            width: 100%;
+            margin-bottom: 15px;
+        
+            input {
+              background: #f5f5f5;
+              border-radius: 5px;
+            }
+          }
+        
+          button {
+              height: 56px;
+              padding: 0 2rem;
+              font-size: 1rem;
+              font-weight: 500;
+              // background-color: #c5a47e;
+              color: white;
+              border-radius: 4px;
+              transition: background-color 0.3s ease;
+      
+              mat-icon {
+                margin-right: 8px;
+              }
+      
+              &:hover {
+                background-color: darken(#c5a47e, 10%);
+              }
+            }
+          
+        }
+      }
+    }
+    // Tab
+    .tab-group{
+      padding: 80px;
+      flex: 70%;
+      .form-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        .form-apartment{
+          display: flex;
+          flex-wrap: wrap;
+          .input-app {
+            flex: 1 1 calc(20% - 8px); 
+            margin-right: 4px;
+          }
+          .file-upload {
+            margin: 16px 0;
+            input {
+              display: none;
+            }
+            label {
+              display: block;
+              padding: 8px 16px;
+              background-color: #3f51b5;
+              color: white;
+              text-align: center;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+          }
+          .image-preview {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+          }
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+          }
+        }
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  

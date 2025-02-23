@@ -1,0 +1,11 @@
+<div class="auth-container">
+    <h2 class="auth-title">Créer un compte</h2>
+    <form (ngSubmit)="onRegister()">
+      <input type="text" formControlName="firstName" placeholder="Prénom" required>
+      <input type="text" formControlName="lastName" placeholder="Nom" required>
+      <input type="email" formControlName="email" placeholder="Email" required>
+      <input type="password" formControlName="password" placeholder="Mot de passe" required>
+      <button type="submit" class="auth-button">S'inscrire</button>
+    </form>
+    <p class="switch-auth">Déjà inscrit ? <a routerLink="/login">Connectez-vous</a></p>
+  </div>

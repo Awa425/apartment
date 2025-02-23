@@ -80,7 +80,6 @@ export class ApartmentDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      console.log(id);
       
       if (id) {
         this.loadApartment(id);
