@@ -1,0 +1,30 @@
+{
+    "properties": [
+      {
+        "id": "1",
+        "title": "Appartement 2 pièces Paris",
+        "ownerId": "user123",
+        "views": 42,
+        "favorites": 7,
+        "inquiries": 3,
+        "lastViewDate": "2025-03-07T10:30:00Z"
+      }
+    ],
+    "propertyViews": [
+      {
+        "id": "1",
+        "propertyId": "1",
+        "userId": "viewer123",
+        "viewDate": "2025-03-07T10:30:00Z"
+      }
+    ],
+    "inquiries": [
+      {
+        "id": "1",
+        "propertyId": "1",
+        "userId": "inquirer123",
+        "message": "Je suis intéressé par ce bien",
+        "date": "2025-03-06T14:20:00Z"
+      }
+    ]
+  }

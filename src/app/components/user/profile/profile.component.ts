@@ -20,6 +20,8 @@ import {MatRadioModule} from '@angular/material/radio';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
+  typeSelectionne: string | null = null;
+
   srcResult:any
   readonly labelPosition = model<'before' | 'after'>('after');
    user: any = {
@@ -29,7 +31,7 @@ export class ProfileComponent {
     email: 'diop@example.com',
     phone: '123-456-7890',
     role: 'Proprietaire',
-    avatar: 'assets/images/flags/avatar.png'
+    avatar: 'assets/images/properties/1.jpg'
   };
   profileFields = [
     { label: 'Prénom', key: 'firstName' },
@@ -80,5 +82,9 @@ export class ProfileComponent {
   onSubmit() {
     console.log("Formulaire soumis !");
     // Tu peux envoyer les images et les autres données ici
-  }   
+  } 
+  
+  choisirType(type: string) {
+    this.typeSelectionne = type;
+  }
 }

@@ -1,0 +1,116 @@
+/* components/landlord-dashboard/landlord-dashboard.component.scss */
+.dashboard-container {
+    padding: 20px;
+    
+    .dashboard-title {
+      margin-bottom: 24px;
+      color: #3f51b5;
+    }
+    
+    .loading-spinner {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
+    }
+    
+    .dashboard-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .stats-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      
+      .stats-card {
+        .stats-number {
+          font-size: 36px;
+          font-weight: bold;
+          color: #3f51b5;
+          margin: 10px 0;
+        }
+        
+        .stats-label {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+    
+    .charts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      gap: 20px;
+      
+      .chart-card {
+        min-height: 300px;
+      }
+    }
+    
+    .top-property-card {
+      .top-property-info {
+        margin-bottom: 16px;
+      }
+      
+      .property-stats {
+        display: flex;
+        gap: 16px;
+        margin: 10px 0;
+        
+        .property-stat {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          
+          mat-icon {
+            color: #3f51b5;
+          }
+        }
+      }
+    }
+    
+    .properties-table-card {
+      .properties-table {
+        width: 100%;
+      }
+    }
+    
+    .no-data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0;
+      text-align: center;
+      
+      mat-icon {
+        font-size: 64px;
+        height: 64px;
+        width: 64px;
+        color: #3f51b5;
+        margin-bottom: 16px;
+      }
+      
+      h2 {
+        color: #333;
+        margin-bottom: 8px;
+      }
+      
+      p {
+        color: #666;
+        margin-bottom: 24px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charts-container {
+      grid-template-columns: 1fr;
+    }
+  }

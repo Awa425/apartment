@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,9 +29,9 @@ export const appConfig: ApplicationConfig = {
       MatFormFieldModule,
       MatDialogModule,
       ReactiveFormsModule,
-      
+      CanvasJSAngularChartsModule
     ])
   ],
   
-  
+ 
 };

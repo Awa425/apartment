@@ -64,6 +64,11 @@ export class ApartmentDetailComponent implements OnInit {
       imageUrl: 'assets/images/properties/2.jpg',
       deposit: 1600000,
       minStay: 6,
+      images: [
+        'assets/images/properties/1.jpg',
+        'assets/images/properties/2.jpg',
+        'assets/images/properties/3.jpg'
+      ],
       features: [
         'Cuisine américaine',
         'Climatisation',

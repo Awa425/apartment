@@ -1,0 +1,53 @@
+<form>
+    <!-- Champs communs -->
+    <mat-form-field appearance="outline" class="input-app">
+      <mat-label>Titre</mat-label>
+      <input matInput placeholder="ex: Bien moderne 3 pièces">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="input-app">
+      <mat-label>Adresse</mat-label>
+      <input matInput>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="input-app">
+      <mat-label>Mensualité</mat-label>
+      <input type="number" matInput>
+    </mat-form-field>
+  
+    <!-- Champs spécifiques à l'appartement -->
+    <div *ngIf="typeBien === 'appartement'">
+      <mat-form-field appearance="outline" class="input-app">
+        <mat-label>Type appartement</mat-label>
+        <mat-select>
+          <mat-option value="studio">Studio</mat-option>
+          <mat-option value="f1">F1</mat-option>
+          <mat-option value="f2">F2</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="input-app">
+        <mat-label>Nombre de pièces</mat-label>
+        <input type="number" matInput>
+      </mat-form-field>
+    </div>
+  
+    <!-- Champs spécifiques à la chambre -->
+    <div *ngIf="typeBien === 'chambre'">
+      <mat-form-field appearance="outline" class="input-app">
+        <mat-label>Étage</mat-label>
+        <input type="number" matInput>
+      </mat-form-field>
+    </div>
+  
+    <!-- Champs spécifiques au bureau -->
+    <div *ngIf="typeBien === 'bureau'">
+      <mat-form-field appearance="outline" class="input-app">
+        <mat-label>Surface totale</mat-label>
+        <input type="number" matInput>
+      </mat-form-field>
+    </div>
+  
+    <!-- Upload images, etc. -->
+  </form>
+  
