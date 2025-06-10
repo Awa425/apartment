@@ -54,7 +54,7 @@ export class HomeComponent {
   properties: any[] = [
     {
       id: 1,
-      name: 'Presidential Towers',
+      nom: 'Presidential Towers',
       location: '555 W Madison St, Chicago, IL 60661',
       image: 'assets/images/properties/img3.jpg',
       bedrooms: 2,
@@ -62,7 +62,7 @@ export class HomeComponent {
     },
     {
       id: 2,
-      name: 'Luxury Apartments',
+      nom: 'Luxury Apartments',
       location: '123 Lake Shore Drive, Chicago, IL 60601',
       image: 'assets/images/properties/img2.jpg',
       bedrooms: 3,
@@ -70,7 +70,7 @@ export class HomeComponent {
     },
     {
       id: 3,
-      name: 'Urban Living',
+      nom: 'Urban Living',
       location: '789 State Street, Chicago, IL 60605',
       image: 'assets/images/properties/img1.jpg',
       bedrooms: 1,
@@ -78,7 +78,7 @@ export class HomeComponent {
     },
     {
       id: 4,
-      name: 'Presidential Towers',
+      nom: 'Presidential Towers',
       location: '555 W Madison St, Chicago, IL 60661',
       image: 'assets/images/properties/img3.jpg',
       bedrooms: 2,
@@ -86,7 +86,7 @@ export class HomeComponent {
     },
     {
       id: 5,
-      name: 'Luxury Apartments',
+      nom: 'Luxury Apartments',
       location: '123 Lake Shore Drive, Chicago, IL 60601',
       image: 'assets/images/properties/img2.jpg',
       bedrooms: 3,
@@ -94,7 +94,7 @@ export class HomeComponent {
     },
     {
       id: 6,
-      name: 'Urban Living',
+      nom: 'Urban Living',
       location: '789 State Street, Chicago, IL 60605',
       image: 'assets/images/properties/img1.jpg',
       bedrooms: 1,

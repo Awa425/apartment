@@ -13,10 +13,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { provideHttpClient } from '@angular/common/http';
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
+     provideHttpClient(),
     provideRouter(routes),
     provideAnimations(),
     importProvidersFrom([

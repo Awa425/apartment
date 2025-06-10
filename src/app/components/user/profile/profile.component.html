@@ -69,7 +69,7 @@
       <mat-card appearance="outlined">
         <mat-card-content>
           <div class="form-grid">
-            <h3>Ajouter un Bien Immobilier</h3>
+            <h3>Choisit le Type de Bien</h3>
             <mat-form-field appearance="outline" class="input-app">
               <mat-label>Type de Bien</mat-label>
               <mat-select [(value)]="typeSelectionne">
@@ -79,87 +79,9 @@
               </mat-select>
             </mat-form-field>
 
-            <!-- Start Form -->
-            <form action="" class="form-apartment" *ngIf="typeSelectionne === 'appartement'">
-              <mat-form-field appearance="outline" class="mat-input" class="input-app">
-                <mat-label>Titre</mat-label>
-                <input matInput [value]="" placeholder="ex : Appartement moderne 3 pièces au centre-ville">
-              </mat-form-field>
+            <!-- Start Form appartement -->
+            <app-apartment-form [form]="bienForm" (submitForm)="onSubmit()" *ngIf="typeSelectionne=='appartement'"></app-apartment-form>
 
-              <mat-form-field appearance="outline" mat-input class="input-app">
-                <mat-label>Adresse</mat-label>
-                <input matInput [value]="">
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" mat-input class="input-app">
-                <mat-label>Type appartement</mat-label>
-                <mat-select>
-                  <mat-option value="one">Studio</mat-option>
-                  <mat-option value="two">F1</mat-option>
-                  <mat-option value="two">F2</mat-option>
-                  <mat-option value="two">F3</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Supercie</mat-label>
-                <input matInput type="number" class="example-right-align" placeholder="0" />
-                <span matTextSuffix style="color: grey;">m²&nbsp;</span>
-              </mat-form-field>
-
-
-
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Nombre de pièces</mat-label>
-                <input type="number" matInput [value]="">
-                <!-- <span style="color: grey;" matTextSuffix>pieces&nbsp;</span> -->
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Étage</mat-label>
-                <input type="number" matInput [value]="">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Mensualité</mat-label>
-                <input type="number" matInput [value]="">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Caution</mat-label>
-                <span matTextSuffix style="color: grey;">mois&nbsp;</span>
-                <input type="number" matInput [value]="">
-              </mat-form-field>
-
-
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Date de Disponibilité</mat-label>
-                <input type="date" matInput [value]="">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="input-app">
-                <mat-label>Durée du bail </mat-label>
-                <input matInput [value]="">
-              </mat-form-field>
-
-              <section class="example-section" class="input-app">
-                <label class="example-margin">Meublé ou non meublé:</label>
-                <mat-radio-group>
-                  <mat-radio-button class="example-margin" value="after">Oui</mat-radio-button>
-                  <mat-radio-button class="example-margin" value="before">Non</mat-radio-button>
-                </mat-radio-group>
-              </section>
-              <!-- Champ d'upload des images -->
-              <div class="file-upload">
-                <label for="fileInput">Ajouter 3 images</label>
-                <input id="fileInput" type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
-              </div>
-
-              <!-- Affichage des aperçus d'images -->
-              <div class="image-preview" *ngIf="imagePreviews.length > 0">
-                <div *ngFor="let img of imagePreviews">
-                  <img [src]="img" alt="Aperçu de l'image">
-                </div>
-              </div>
-
-            </form>
-            <button mat-raised-button color="accent">Publier</button>
 
           </div>
         </mat-card-content>

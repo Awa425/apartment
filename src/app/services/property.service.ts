@@ -23,7 +23,7 @@ export interface Property {
   providedIn: 'root'
 })
 export class PropertyService {
-  private apiUrl = 'api/properties'; // À remplacer par l'URL de votre API réelle
+  private apiUrl = 'http://localhost:3000/properties'; // URL de json-server
 
   constructor(private http: HttpClient) {}
 

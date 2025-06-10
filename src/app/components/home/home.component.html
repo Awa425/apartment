@@ -36,7 +36,7 @@
 </section>
 
 <section class="properties">
-  <h2>NOS PROPRIÉTÉS</h2>
+  <h2>Nos Appartements</h2>
   <div class="decorative-line"></div>
   <div class="properties-grid">
     <div class="property-card" *ngFor="let property of properties" (click)="onPropertyClick(property.id)">
@@ -44,7 +44,7 @@
         <img [src]="property.image" [alt]="property.name">
       </div>
       <div class="property-content" style="text-align: center;">
-        <h3 class="property-title">{{property.name}}</h3>
+        <h3 class="property-title">{{property.nom}}</h3>
         <p class="property-address">{{property.location}}</p>
         <p class="property-price">Studio - {{property.bedrooms}} Beds | {{property.price | currency:'FCFA':'symbol':'1.0-0'}} - {{property.price * 1.5 | currency:'FCFA':'symbol':'1.0-0'}}</p>
       </div>
@@ -54,7 +54,7 @@
 
 <section class="featured-tours">
   <div class="section-header">
-    <h2>Our featured TOURS</h2>
+    <h2>Nos Chambres</h2>
     <div class="decorative-line"></div>
   </div>
 
@@ -77,7 +77,7 @@
 
   <div class="view-all">
     <button mat-raised-button color="accent" class="view-all-btn">
-      VIEW ALL TOURS
+      VOIR TOUT
     </button>
   </div>
 </section>
@@ -98,7 +98,7 @@
   </div>
 
   <div class="special-offers">
-    <h2>Special OFFERS</h2>
+    <h2>Offre Spécial</h2>
     <div class="decorative-line"></div>
     <div class="offers-grid">
       <div class="offer-card" *ngFor="let offer of specialOffers">
@@ -117,7 +117,7 @@
 </div>
 
 <section class="testimonials">
-  <h2>Some words FROM CUSTOMERS</h2>
+  <h2>Taanal sa deukouwaye noumou la nekhé!</h2>
   <div class="decorative-line"></div>
 
   <div class="testimonial-container">
@@ -127,7 +127,7 @@
           <mat-icon>account_circle</mat-icon>
         </div>
         <div class="user-details">
-          <h3>{{testimonials[currentTestimonialIndex].name}}</h3>
+          <h3>Diop Solution</h3>
           <p class="date">{{testimonials[currentTestimonialIndex].date}}</p>
         </div>
       </div>
@@ -152,15 +152,15 @@
       <mat-icon class="icon">map</mat-icon>
       <div class="info">
         <h3>ADDRESS</h3>
-        <p>123 Street Name, City Name</p>
+        <p>Pikine, Dakar</p>
       </div>
     </div>
 
     <div class="contact-item">
       <mat-icon class="icon">phone</mat-icon>
       <div class="info">
-        <h3>PHONE</h3>
-        <p>+1 (800) 22 33 444</p>
+        <h3>TELEPHONE</h3>
+        <p>+221 773225658</p>
       </div>
     </div>
 
@@ -168,7 +168,7 @@
       <mat-icon class="icon">email</mat-icon>
       <div class="info">
         <h3>E-MAIL</h3>
-        <p>contact&#64;apartment-finder.com</p>
+        <p>diopawa425&#64;gmail.com</p>
       </div>
     </div>
   </div>

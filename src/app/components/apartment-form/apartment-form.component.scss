@@ -1,0 +1,35 @@
+        .form-apartment{
+          display: flex;
+          flex-wrap: wrap;
+          .input-app {
+            flex: 1 1 calc(20% - 8px); 
+            margin-right: 4px;
+          }
+          .file-upload {
+            margin: 3px 50px;
+            input {
+              display: none;
+            }
+            label {
+              display: block;
+              padding: 8px 16px;
+              background-color: #3f51b5;
+              color: white;
+              text-align: center;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+          }
+          .image-preview {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+          }
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+          }
+        }

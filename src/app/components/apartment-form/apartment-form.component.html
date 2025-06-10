@@ -1,0 +1,80 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-apartment">
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Titre</mat-label>
+    <input matInput formControlName="titre" placeholder="ex : Appartement moderne 3 pièces au centre-ville">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Adresse</mat-label>
+    <input matInput formControlName="adresse">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Type appartement</mat-label>
+    <mat-select formControlName="type_ap">
+      <mat-option value="F1">Studio</mat-option>
+      <mat-option value="F2">F1</mat-option>
+      <mat-option value="F3">F2</mat-option>
+      <mat-option value="F4">F3</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Superficie</mat-label>
+    <input matInput formControlName="superficie" type="number" placeholder="0" />
+    <span matTextSuffix>m²</span>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Nombre de pièces</mat-label>
+    <input type="number" matInput formControlName="nombre_piece">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Étage</mat-label>
+    <input type="number" matInput formControlName="etage">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Mensualité</mat-label>
+    <input type="number" matInput formControlName="mensualite">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Caution</mat-label>
+    <input type="number" matInput formControlName="caution">
+    <span matTextSuffix>mois</span>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Date de Disponibilité</mat-label>
+    <input type="date" matInput formControlName="date_dispo">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="input-app">
+    <mat-label>Durée du bail</mat-label>
+    <input matInput formControlName="duree_bail">
+  </mat-form-field>
+
+  <section class="input-app">
+    <label>Meublé ou non meublé:</label>
+    <mat-radio-group formControlName="meuble">
+      <mat-radio-button value="oui">Oui</mat-radio-button>
+      <mat-radio-button value="non">Non</mat-radio-button>
+    </mat-radio-group>
+  </section>
+
+  <div class="file-upload">
+    <label for="fileInput">Ajouter 3 images</label>
+    <input id="fileInput" type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
+  </div>
+
+  <div class="image-preview" *ngIf="imagePreviews.length > 0">
+    <div *ngFor="let img of imagePreviews">
+      <img [src]="img" alt="Aperçu de l'image">
+    </div>
+  </div>
+
+  <button mat-raised-button color="accent">Publier</button>
+</form>

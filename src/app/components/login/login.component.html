@@ -1,9 +1,21 @@
-<div class="auth-container">
-    <h2 class="auth-title">Créer un compte</h2>
-    <form (ngSubmit)="onRegister()">
-      <input type="email" formControlName="username" placeholder="nom d\'utilisateur" required>
-      <input type="password" formControlName="password" placeholder="Mot de passe" required>
-      <button type="submit" class="auth-button">S'inscrire</button>
-    </form>
-    <p class="switch-auth">Pas de compte ? <a routerLink="/register">S'inscrire</a></p>
+<div class="form-container">
+  <form class="form-content">
+    <h2 style="text-align: center;">Se Connecter</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Téléphone</mat-label>
+      <input matInput placeholder="ex : 773225651">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button mat-raised-button style="background-color: #FF385C; color: white;" type="submit">Se Connecter</button>
+  </form>
+  <div style="margin-top: 20px; ">
+    <small style="font-size: 15px;">Vous n'avez pas de compte ?
+      <a routerLink="/register" style="color: rgb(101, 101, 224);">Inscrivez-vous</a>
+    </small>
   </div>
+</div>

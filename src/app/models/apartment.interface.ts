@@ -33,3 +33,19 @@ export interface Apartment {
     distance: string;
   }[];
 }
+
+export interface Appartement {
+  id?: number;
+  titre: string;
+  adresse: string;
+  type_ap: string;
+  superficie: number;
+  nombre_piece: number;
+  etage: number;
+  mensualite: number;
+  caution: number;
+  date_dispo: string;
+  duree_bail: string;
+  meuble: boolean;
+  photo?: string[];
+}

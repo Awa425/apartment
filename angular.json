@@ -73,7 +73,8 @@
               "buildTarget": "apartment-finder:build:production"
             },
             "development": {
-              "buildTarget": "apartment-finder:build:development"
+              "buildTarget": "apartment-finder:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
